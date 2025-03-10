@@ -1,0 +1,62 @@
+/* Navbar.css */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    width: 100%;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primary-color);
+  }
+  
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+  
+  .nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .nav-links a:hover {
+    color: var(--primary-color);
+  }
+  
+  .login-btn, .register-btn {
+    padding: 10px 25px;
+    border-radius: 50px;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .login-btn {
+    background-color: var(--secondary-color);
+    color: white;
+    margin-left: 10px;
+  }
+  
+  .register-btn {
+    background-color: var(--danger-color);
+    color: white;
+  }
+  
+  /* Responsive navbar */
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+    }
+    
+    /* Here you would typically add a mobile menu button */
+    .navbar {
+      padding: 15px 0;
+    }
+  }

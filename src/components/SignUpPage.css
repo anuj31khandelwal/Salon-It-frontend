@@ -1,0 +1,214 @@
+.signup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #121212;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+  
+  .signup-card {
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    padding: 30px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  h1 {
+    color: white;
+    font-size: 28px;
+    margin-bottom: 5px;
+    text-align: center;
+    font-weight: 700;
+  }
+  
+  .sign-in-text {
+    color: white;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 14px;
+  }
+  
+  .sign-in-text a {
+    color: #ff6b6b;
+    text-decoration: none;
+  }
+  
+  .sign-in-text a:hover {
+    text-decoration: underline;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    color: white;
+    margin-bottom: 5px;
+    font-size: 14px;
+  }
+  
+  .form-group input,
+  .form-group select {
+    width: 100%;
+    padding: 12px 15px;
+    background-color: #2c2c2c;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 14px;
+    outline: none;
+    box-sizing: border-box;
+  }
+  
+  .form-group select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 1em;
+  }
+  
+  .form-group input::placeholder,
+  .form-group select::placeholder {
+    color: #8a8a8a;
+  }
+  
+  .password-input-container {
+    position: relative;
+  }
+  
+  .toggle-password {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #8a8a8a;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .password-requirements {
+    color: #ff6b6b;
+    font-size: 12px;
+    margin-top: 5px;
+    margin-bottom: 0;
+  }
+  
+  .password-requirements.success {
+    color: #4cdbbd;
+  }
+  
+  .terms-container {
+    display: flex;
+    align-items: flex-start;
+    margin: 20px 0;
+  }
+  
+  .terms-container input[type="checkbox"] {
+    margin-right: 10px;
+    margin-top: 3px;
+    width: 16px;
+    height: 16px;
+  }
+  
+  .terms-container label {
+    color: white;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  
+  .terms-link {
+    color: #4cdbbd;
+    text-decoration: none;
+  }
+  
+  .terms-link:hover {
+    text-decoration: underline;
+  }
+  
+  .create-account-button {
+    width: 100%;
+    padding: 14px;
+    background-color: #4cdbbd;
+    color: #121212;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s;
+  }
+  
+  .create-account-button:hover {
+    background-color: #3ec0a8;
+  }
+  
+  .create-account-button:disabled {
+    background-color: #2c6e64;
+    cursor: not-allowed;
+    color: rgba(255, 255, 255, 0.6);
+  }
+  
+  .plus-icon {
+    margin-right: 8px;
+    font-size: 14px;
+  }
+  
+  /* Add these to both SignInPage.css and SignUpPage.css */
+
+.error-message {
+    background-color: rgba(255, 107, 107, 0.2);
+    color: #ff6b6b;
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    border-left: 3px solid #ff6b6b;
+  }
+  
+  .success-message {
+    background-color: rgba(76, 219, 189, 0.2);
+    color: #4cdbbd;
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    border-left: 3px solid #4cdbbd;
+  }
+  
+  .loading-spinner {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s ease-in-out infinite;
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .signup-card {
+      padding: 20px;
+    }
+    
+    h1 {
+      font-size: 24px;
+    }
+  }
+

@@ -1,0 +1,132 @@
+/* CitySelection.css */
+.city-selection-container {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Search Bar Styles */
+  .search-bar-container {
+    border-bottom: 1px solid #eaeaea;
+    padding-bottom: 20px;
+  }
+  
+  .search-bar {
+    display: flex;
+    align-items: center;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    padding: 10px 16px;
+    margin-bottom: 15px;
+    background-color: white;
+  }
+  
+  .search-icon {
+    color: #a0aec0;
+    margin-right: 10px;
+  }
+  
+  .search-input {
+    border: none;
+    width: 100%;
+    font-size: 16px;
+    outline: none;
+  }
+  
+  .detect-location {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 5px 0;
+  }
+  
+  .location-icon {
+    margin-right: 10px;
+  }
+  
+  .detect-text {
+    color: #e53e3e;
+    font-size: 14px;
+  }
+  
+  /* Popular Cities Section */
+  .popular-cities-section {
+    padding-top: 20px;
+  }
+  
+  .section-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #4a5568;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+  
+  .cities-grid {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  
+  @media (max-width: 1200px) {
+    .cities-grid {
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .cities-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .cities-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  .city-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .city-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 24px;
+  }
+  
+  .city-name {
+    font-size: 14px;
+    color: #4a5568;
+    text-align: center;
+  }
+  
+  .view-all-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .view-all-button {
+    background: none;
+    border: none;
+    color: #e53e3e;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 10px 15px;
+  }
+  
+  .view-all-button:hover {
+    text-decoration: underline;
+  }
