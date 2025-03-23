@@ -1,4 +1,3 @@
-/* SalonDashboard.css */
 .salon-dashboard {
   --primary-color: #f16063;
   --dark-bg: #1f1f23;
@@ -11,21 +10,13 @@
   --border-radius: 8px;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--dark-bg);
-  color: var(--text-light);
-}
-
-.dashboard-container {
+.salon-dashboard .dashboard-container {
   margin: 0 auto;
   padding: 20px;
   align-items: center;
 }
 
-.navbar {
+.salon-dashboard .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -33,19 +24,19 @@ body {
   width: 100%;
 }
 
-.logo {
+.salon-dashboard .logo {
   font-size: 24px;
   font-weight: bold;
   color: var(--primary-color);
 }
 
-.nav-links {
+.salon-dashboard .nav-links {
   display: flex;
   align-items: center;
   gap: 30px;
 }
 
-.nav-links a {
+.salon-dashboard .nav-links a {
   color: var(--text-color);
   text-decoration: none;
   transition: color 0.3s;
@@ -55,7 +46,7 @@ body {
   color: var(--primary-color);
 }
 
-.main-header {
+.salon-dashboard .main-header {
   text-align: center;
   margin-bottom: 20px;
 }
@@ -69,15 +60,7 @@ body {
   margin-top: 0;
 }
 
-.salon-dashboard {
-  background-color: var(--dark-bg);
-  border-radius: var(--border-radius);
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  width: 100%;
-}
-
-.dashboard-header {
+.salon-dashboard .dashboard-header {
   background-color: var(--primary-color);
   padding: 20px;
   display: flex;
@@ -85,23 +68,23 @@ body {
   align-items: center;
 }
 
-.header-info h2 {
+.salon-dashboard .header-info h2 {
   margin: 0;
   font-size: 1.5rem;
 }
 
-.header-info p {
+.salon-dashboard .header-info p {
   margin: 5px 0 0;
   font-size: 0.9rem;
   opacity: 0.9;
 }
 
-.salon-info {
+.salon-dashboard .salon-info {
   display: flex;
   align-items: center;
 }
 
-.avatar {
+.salon-dashboard .avatar {
   width: 36px;
   height: 36px;
   background-color: white;
@@ -114,91 +97,91 @@ body {
   margin-right: 10px;
 }
 
-.salon-details {
+.salon-dashboard .salon-details {
   text-align: right;
 }
 
-.salon-name {
+.salon-dashboard .salon-name {
   font-weight: bold;
   margin: 0;
 }
 
-.salon-type {
+.salon-dashboard .salon-type {
   font-size: 0.8rem;
   margin: 0;
   opacity: 0.9;
 }
 
-.dashboard-nav {
+.salon-dashboard .dashboard-nav {
   background-color: var(--dark-bg);
   border-bottom: 1px solid #333;
 }
 
-.dashboard-nav ul {
+.salon-dashboard .dashboard-nav ul {
   display: flex;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.dashboard-nav li {
+.salon-dashboard .dashboard-nav li {
   padding: 15px 25px;
   cursor: pointer;
   transition: all 0.2s;
 }
 
-.dashboard-nav li:hover {
+.salon-dashboard .dashboard-nav li:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-.dashboard-nav li.active {
+.salon-dashboard .dashboard-nav li.active {
   border-bottom: 2px solid var(--primary-color);
   font-weight: bold;
 }
 
-.dashboard-content {
+.salon-dashboard .dashboard-content {
   padding: 20px;
 }
 
-.stats-grid {
+.salon-dashboard .stats-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
   margin-bottom: 30px;
 }
 
-.stat-card {
+.salon-dashboard .stat-card {
   background-color: var(--card-bg);
   border-radius: var(--border-radius);
   padding: 15px;
 }
 
-.stat-header {
+.salon-dashboard .stat-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
 }
 
-.stat-header h3 {
+.salon-dashboard .stat-header h3 {
   margin: 0;
   font-size: 0.9rem;
   color: var(--text-muted);
 }
 
-.stat-value {
+.salon-dashboard .stat-value {
   font-size: 1.8rem;
   font-weight: bold;
   margin-bottom: 5px;
 }
 
-.stat-change, .stat-alert, .stat-info {
+.salon-dashboard .stat-change, .stat-alert, .stat-info {
   font-size: 0.8rem;
   display: flex;
   align-items: center;
 }
 
-.positive {
+.salon-dashboard .positive {
   color: var(--positive);
 }
 
@@ -514,17 +497,37 @@ body {
   color: #f1c40f;
 }
 
-.edit-btn, .cancel-btn {
-  background: none;
+.appointment-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  color: white;
+} 
+
+.action-button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
   border: none;
-  color: #e74c3c;
-  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  margin-left: 10px;
+  background-color: #333;
+  color: var(--text-color);
+  transition: all 0.2s;
 }
 
-.edit-btn {
-  color: #3498db;
+.action-button:hover {
+  transform: scale(1.1);
+}
+
+.action-button.edit:hover {
+  background-color: var(--secondary-color);
+}
+
+.action-button.cancel:hover {
+  background-color: var(--danger-color);
 }
 
 .table-footer {
@@ -563,6 +566,136 @@ body {
   width: auto;
   padding: 0 10px;
 }
+
+/* Main container */
+.services-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+  font-family: Arial, sans-serif;
+  color: #fff;
+}
+
+/* Header Section */
+.services-container .services-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.services-container .services-header h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Buttons */
+/* Buttons Styling */
+.services-container .add-service-btn {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  margin-left: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  text-decoration: none; /* Removes underline */
+  gap: 8px; /* Adds spacing between icon and text */
+  transition: background 0.3s ease-in-out;
+}
+
+.services-container .add-service-btn:hover {
+  background: #0056b3;
+}
+
+/* Fix Icon Alignment */
+.services-container .plus-icon {
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+/* Remove Link Underline */
+.services-container a {
+  text-decoration: none;
+}
+
+/* Table */
+.services-container .services-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #1a1a1a;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.services-container .table-header {
+  display: flex;
+  background: #333;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 12px 15px;
+}
+
+.services-container .header-cell {
+  flex: 1;
+  padding: 10px;
+  text-align: left;
+}
+
+.services-container .table-row {
+  display: flex;
+  border-bottom: 1px solid #444;
+  padding: 12px 15px;
+}
+
+.services-container .table-row:hover {
+  background: #222;
+}
+
+.services-container .cell {
+  flex: 1;
+  padding: 10px;
+}
+
+/* Loading and Error Messages */
+.services-container .loading,
+.services-container .error-message,
+.services-container .no-data {
+  text-align: center;
+  font-size: 16px;
+  padding: 15px;
+  color: #ff5555;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .services-container .table-header,
+  .services-container .table-row {
+    display: block;
+  }
+
+  .services-container .header-cell,
+  .services-container .cell {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+  }
+
+  .services-container .header-cell::after,
+  .services-container .cell::before {
+    content: attr(data-label);
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #aaa;
+  }
+}
+
 
 /* ===== Staff Management Tab ===== */
 .staff-container {

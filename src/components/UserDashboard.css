@@ -1,4 +1,4 @@
-:root{
+.user-dashboard {
     --primary-color: #3ee8d7;
     --secondary-color: #7b68ee;
     --danger-color: #ff6b6b;
@@ -11,42 +11,29 @@
     --pending-color: #ffa500;
   }
   
-  .dashboard-container {
-    width: 100%;
-    min-height: 100vh;
-    background-color: var(--dark-bg);
-    color: var(--text-color);
-    padding: 2rem 5%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.user-dashboard .dashboard-container {
+  margin: 0 auto;
+  padding: 20px;
+  align-items: center;
   }
   
-  .dashboard-title {
+.user-dashboard .dashboard-title {
     font-size: 2.5rem;
     font-weight: 700;
     text-align: center;
     margin-bottom: 0.5rem;
   }
   
-  .dashboard-subtitle {
+  .user-dashboard .dashboard-subtitle {
     color: var(--text-secondary);
     text-align: center;
     margin-bottom: 2rem;
     font-size: 1rem;
   }
   
-  /* Main dashboard card */
-  .dashboard-card {
-    width: 100%;
-    max-width: 1200px;
-    background-color: var(--card-bg);
-    border-radius: 15px;
-    overflow: hidden;
-  }
-  
+
   /* Dashboard header */
-  .dashboard-header {
+  .user-dashboard .dashboard-header {
     background-color: var(--secondary-color);
     padding: 1.5rem;
     display: flex;
@@ -54,30 +41,30 @@
     align-items: center;
   }
   
-  .dashboard-header-left {
+  .user-dashboard .dashboard-header-left {
     display: flex;
     flex-direction: column;
   }
   
-  .dashboard-name {
+  .user-dashboard .dashboard-name {
     font-size: 1.5rem;
     font-weight: 600;
     margin: 0;
   }
   
-  .dashboard-description {
+  .user-dashboard .dashboard-description {
     font-size: 0.9rem;
     opacity: 0.9;
     margin: 0;
   }
   
-  .dashboard-header-right {
+  .user-dashboard .dashboard-header-right {
     display: flex;
     align-items: center;
     gap: 0.75rem;
   }
   
-  .user-avatar {
+  .user-dashboard .user-avatar {
     width: 40px;
     height: 40px;
     background-color: rgba(255, 255, 255, 0.2);
@@ -93,13 +80,13 @@
     flex-direction: column;
   }
   
-  .user-name {
+  .user-dashboard .user-name {
     font-size: 0.9rem;
     font-weight: 500;
     margin: 0;
   }
   
-  .user-type {
+  .user-dashboard .user-type {
     font-size: 0.8rem;
     opacity: 0.9;
     margin: 0;
@@ -112,7 +99,7 @@
     border-bottom: 1px solid #333;
   }
   
-  .nav-item {
+   .nav-item {
     padding: 1rem 1.25rem;
     background: transparent;
     border: none;
@@ -236,52 +223,55 @@
   }
   
   /* Appointment list */
-  .appointment-list {
+  .user-dashboard .appointment-list {
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;
   }
   
-  .appointment-item {
+  .user-dashboard .appointment-container {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .user-dashboard .appointment-item {
     background-color: var(--item-bg);
     border-radius: 10px;
     padding: 1rem;
     display: flex;
-    align-items: center;
   }
   
-  .appointment-date {
+  .user-dashboard .appointment-date {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
     min-width: 60px;
     margin-right: 1rem;
   }
   
-  .month {
+  .user-dashboard .month {
     font-size: 0.8rem;
     color: var(--primary-color);
     text-transform: uppercase;
     font-weight: 600;
   }
   
-  .day {
+  .user-dashboard .day {
     font-size: 1.5rem;
     font-weight: 700;
   }
   
-  .appointment-details {
+  .user-dashboard .appointment-details {
     flex: 1;
   }
   
-  .appointment-service {
+  .user-dashboard .appointment-service {
     font-size: 1rem;
     margin: 0 0 0.5rem 0;
   }
   
-  .appointment-time, .appointment-location {
+  .user-dashboard .appointment-time, .appointment-location {
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -290,30 +280,37 @@
     color: var(--text-secondary);
   }
   
-  .appointment-actions {
+  /* .appointment-actions {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-  }
+  } */
   
-  .status-badge {
+  .user-dashboard .status-badge {
     padding: 0.35rem 0.75rem;
     border-radius: 5px;
     font-size: 0.75rem;
     font-weight: 500;
   }
   
-  .status-badge.confirmed {
+  .user-dashboard .status-badge.confirmed {
     background-color: rgba(123, 104, 238, 0.2);
     color: var(--confirmed-color);
   }
   
-  .status-badge.pending {
+  .user-dashboard .status-badge.pending {
     background-color: rgba(255, 165, 0, 0.2);
     color: var(--pending-color);
   }
   
-  .action-button {
+  .user-dashboard .appointment-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    color: white;
+  } 
+  
+  .user-dashboard .action-button {
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -327,26 +324,26 @@
     transition: all 0.2s;
   }
   
-  .action-button:hover {
+  .user-dashboard .action-button:hover {
     transform: scale(1.1);
   }
   
-  .action-button.edit:hover {
+  .user-dashboard .action-button.edit:hover {
     background-color: var(--secondary-color);
   }
   
-  .action-button.cancel:hover {
+  .user-dashboard .action-button.cancel:hover {
     background-color: var(--danger-color);
-  }
+  }  
   
   /* Load more button */
-  .load-more-container {
+  .user-dashboard .load-more-container {
     display: flex;
     justify-content: center;
     padding: 1rem 1.5rem 2rem;
   }
   
-  .load-more-button {
+  .user-dashboard .load-more-button {
     background-color: transparent;
     border: 1px solid var(--secondary-color);
     color: var(--secondary-color);
@@ -357,7 +354,7 @@
     transition: all 0.2s;
   }
   
-  .load-more-button:hover {
+  .user-dashboard .load-more-button:hover {
     background-color: rgba(123, 104, 238, 0.1);
   }
   

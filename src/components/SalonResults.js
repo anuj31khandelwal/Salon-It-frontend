@@ -70,7 +70,6 @@ const SalonResults = () => {
       <nav className="navbar">
         <div className="logo">Salon-It!</div>
         <div className="nav-links">
-          <Link to="/">Home</Link>
           <Link to="/Features">Features</Link>
           <Link to="/HowItWorks">How It Works</Link>
           <Link to="/SalonRegistration">Partner with Us</Link>

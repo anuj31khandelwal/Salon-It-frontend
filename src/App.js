@@ -14,6 +14,13 @@ import SalonPage from './components/SalonPage';
 import BookingPage from './components/BookingPage';
 import SalonRegistrationForm from './components/SalonRegistration';
 import ConfirmationPage from './components/ConfirmationPage';
+import UploadDocuments from './components/UploadDocuments';
+import SalonOwnerPage from './components/SalonOwnerPage';
+import BarberDashboard from './components/BarberDashboard';
+import AddService from './components/AddService';
+import EditService from './components/EditService';
+import AddBarber from './components/AddBarber';
+import EditBarber from './components/EditBarber';
 
 function App() {
   return (
@@ -22,7 +29,7 @@ function App() {
         <Routes>
           <Route path="/UserDashboard/:userId" element={<UserDashboard />} />
           <Route path="/" element={<LandingPage />} />
-          <Route path="/SalonDashboard" element={<SalonDashboard />} />
+          <Route path="/SalonDashboard/:salonId" element={<SalonDashboard />} />
           <Route path="/SignInPage" element={<SignInPage />} />  
           <Route path="/SignUpPage" element={<SignUpPage />} /> 
           <Route path ="/Features" element={<Features />} />
@@ -33,6 +40,13 @@ function App() {
           <Route path="/BookingPage" element={<BookingPage />} /> 
           <Route path="/SalonRegistration" element={<SalonRegistrationForm />} /> 
           <Route path="/ConfirmationPage" element={<ConfirmationPage />} />
+          <Route path="/UploadDocuments/:salonId" element={<UploadDocuments />} />  
+          <Route path="/SalonOwnerPage" element={<SalonOwnerPage />} /> 
+          <Route path="/BarberDashboard/:barberId" element ={<BarberDashboard />} /> 
+          <Route path='/AddService/:salonId' element={<AddService />} />
+          <Route path="/EditService/:salonId" element={<EditService />} />
+          <Route path="/AddBarber/:salonId" element={<AddBarber />} />
+          <Route path="/EditBarber/:salonId" element={<EditBarber />} />  
         </Routes>
       </Router>
     </div>

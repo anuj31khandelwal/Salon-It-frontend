@@ -1,0 +1,94 @@
+.upload-document-page {
+    font-family: 'Arial', sans-serif;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  .upload-document-page h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .upload-document-page form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .upload-document-page label {
+    font-weight: bold;
+    color: #555;
+    text-align: left;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .upload-document-page input[type="file"] {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: #fff;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  .upload-document-page button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .upload-document-page button:disabled {
+    background: #aaa;
+    cursor: not-allowed;
+  }
+  
+  .upload-document-page button:hover:not(:disabled) {
+    background: #0056b3;
+  }
+  
+  .upload-document-page .verification-message {
+    padding: 20px;
+    background: #e9f7ef;
+    border: 1px solid #d4edda;
+    color: #155724;
+    border-radius: 4px;
+  }
+  
+  .upload-document-page .verification-message h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .upload-document-page .verification-message p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  @media (max-width: 600px) {
+    .upload-document-page {
+      padding: 15px;
+    }
+  
+    .upload-document-page h1 {
+      font-size: 20px;
+    }
+  
+    .upload-document-page button {
+      font-size: 14px;
+    }
+  }

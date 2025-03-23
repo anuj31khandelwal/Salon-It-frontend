@@ -60,8 +60,8 @@ const UserDashboard = () => {
   const displayedAppointments = activeTab === 'Upcoming' ? upcomingAppointments : pastAppointments;
 
   return (
+    <div className="user-dashboard">
     <div className="dashboard-container">
-      {/* Navbar component */}
       <nav className="navbar">
         <div className="logo">Salon-It!</div>
         <div className="nav-links">
@@ -74,16 +74,13 @@ const UserDashboard = () => {
         </div>
       </nav>
 
-      {/* Main dashboard card */}
-      <div className="dashboard-card">
-        {/* Dashboard header */}
         <div className="dashboard-header">
           <div className="dashboard-header-left">
             <h2 className="dashboard-name">Customer Dashboard</h2>
             <p className="dashboard-description">Manage your appointments and preferences</p>
           </div>
           <div className="dashboard-header-right">
-            <div className="user-avatar">JD</div>
+            <div className="user-avatar">😀</div>
             <div className="user-info">
               <p className="user-name">{location.state?.userName}</p>
               <p className="user-type">Premium Member</p>
@@ -142,6 +139,7 @@ const UserDashboard = () => {
           {displayedAppointments.length > 0 ? (
             displayedAppointments.map(appointment => (
               <div key={appointment.id} className="appointment-item">
+                <div className="appointment-container">
                 <div className="appointment-date">
                   <div className="month">{formatDate(appointment.appointmentTime).split(' ')[0]}</div>
                   <div className="day">{formatDate(appointment.appointmentTime).split(' ')[1]}</div>
@@ -164,16 +162,17 @@ const UserDashboard = () => {
                     {appointment.status}
                   </span>
                   {appointment.status !== 'COMPLETED' && (
-                    <>
+                    <div className="appointment-actions">
                       <button className="action-button edit">
                         <Edit size={16} />
                       </button>
                       <button className="action-button cancel">
                         <X size={16} />
                       </button>
-                    </>
+                    </div>
                   )}
                 </div>
+              </div>
               </div>
             ))
           ) : (

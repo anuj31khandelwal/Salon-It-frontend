@@ -25,24 +25,20 @@ const SignInPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
   
-    // Reset messages
     setError('');
     setSuccessMessage('');
     setIsLoading(true);
   
     try {
-      // Prepare login request data
       const loginData = {
         username: username,
         password: password
       };
   
       console.log("Sending login request with data:", loginData);
-  
-      // Make API call to backend
+      
       const response = await api.post('/api/auth/login', loginData);
   
-      // Log the full response for debugging
       console.log("Login response:", response);
   
       if (response.data && response.data.customerId) {
@@ -51,21 +47,31 @@ const SignInPage = () => {
         console.warn("Customer ID not found in response!");
       }
   
-      // Handle successful login
-      setSuccessMessage(response.data.message || "Login successful");
+      // Extract customerType from response
+      const customerType = response.data.customerType; // OWNER, USER, or BARBER
+      console.log("Customer Type:", customerType);
   
       localStorage.setItem('username', response.data.customerName || '');
       localStorage.setItem('userId', response.data.customerId || '');
-
-      console.log("localStorage:",localStorage);
-      navigate('/SelectLocation');
+      localStorage.setItem('customerType', customerType || '');
+  
+      // Redirect based on customerType
+      if (customerType === "OWNER") {
+        navigate('/SalonOwnerPage');
+      } else if (customerType === "USER") {
+        navigate('/SelectLocation');
+      } else if (customerType === "BARBER") {
+        navigate(`/BarberDashboard/${response.data.customerId}`);
+      } else {
+        setError("Invalid customer type received.");
+      }
   
     } catch (error) {
       console.error("Login error:", error);
   
       if (error.response) {
         console.log("Error response from server:", error.response.data);
-        setError(error.response.data);
+        setError(error.response.data.message || 'Login failed. Please try again.');
       } else if (error.request) {
         console.warn("No response received from server");
         setError('No response from server. Please try again later.');
@@ -76,7 +82,7 @@ const SignInPage = () => {
     } finally {
       setIsLoading(false);
     }
-  };
+  };  
   
 
   return (
@@ -84,7 +90,7 @@ const SignInPage = () => {
       <div className="signin-card">
         <h1>Sign in to your account</h1>
         <p className="create-account-text">
-          Or <a href="/signup">create a new account</a>
+          Or <a href="/SignUpPage">create a new account</a>
         </p>
 
         {error && <div className="error-message">{error}</div>}
