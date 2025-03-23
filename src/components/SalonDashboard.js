@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useParams, useLocation } from 'react-router-dom';
 import api from '../api';
 import './SalonDashboard.css';
-import { Clock, Check,Calendar,Edit, X,Users,DollarSign, Delete } from 'lucide-react';
+import { Clock, Check,Calendar,Edit, X } from 'lucide-react';
 
 const SalonDashboard = () => {
   const { salonId } = useParams();
@@ -86,6 +86,7 @@ const SalonDashboard = () => {
       setLoading(true);
       const response = await api.get(`/api/salons/barbers/${salonId}`);
       setStaffMembers(Array.isArray(response.data) ? response.data : []);
+      console.log("Staff Members when set:", staffMembers);
       setLoading(false);
     } catch (error) {
       console.error('Failed to fetch staff data:', error);
@@ -347,6 +348,7 @@ const SalonDashboard = () => {
   
 
   const renderOverviewTab = () => {
+    console.log("Staff Members:",{staffMembers});
     return (
       <div className="dashboard-content">
         {loading ? (
@@ -368,7 +370,7 @@ const SalonDashboard = () => {
             <div className="stat-card">
               <div className="stat-content">
                 <div className="stat-label">Active Barbers</div>
-                <div className="stat-value">8</div>
+                <div className="stat-value">{staffMembers.length}</div>
                 <div className="stat-trend positive">👥 Full staff today</div>
               </div>
             </div>
@@ -430,6 +432,7 @@ const SalonDashboard = () => {
               <h3>Recent Appointments</h3>
               {dashboardData.upcomingAppointments.slice(0, 3).map(appointment => (
                 <div key={appointment.id} className="appointment-item">
+                  <div className="appointment-container">
                   <div className="appointment-date">
                     <div className="month">{formatDateShort(appointment.appointmentTime).split(' ')[0]}</div>
                     <div className="day">{formatDateShort(appointment.appointmentTime).split(' ')[1]}</div>
@@ -447,7 +450,7 @@ const SalonDashboard = () => {
                     </p>
                   </div>
 
-                  <div className="appointment-actions">
+                  {/* <div className="appointment-actions">
                     <span className={`status-badge ${appointment.status.toLowerCase()}`}>
                       {appointment.status}
                     </span>
@@ -461,8 +464,9 @@ const SalonDashboard = () => {
                         </button>
                       </>
                     )}
-                  </div>
+                  </div> */}
                 </div>
+              </div>
               ))}
             </div>
           </>
@@ -723,7 +727,7 @@ const SalonDashboard = () => {
             <p className="dashboard-description">Manage appointments and salon details</p>
           </div>
           <div className="dashboard-header-right">
-            <div className="user-avatar">{validSalonId.toString().substring(0, 1).toUpperCase()}</div>
+            {/* <div className="user-avatar">{validSalonId.toString().substring(0, 1).toUpperCase()}</div> */}
             <div className="user-info">
               <p className="user-name">{salonName}</p>
               <p className="user-type">Verified Salon</p>

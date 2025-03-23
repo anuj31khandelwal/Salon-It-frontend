@@ -196,10 +196,10 @@ const BarberDashboard = () => {
         </div>
         <div className="header-right">
           <div className="barber-profile">
-            <div className="profile-initials">{barberInfo.initials || 'BT'}</div>
             <div className="profile-info">
-              <h3>{barberInfo.name || 'Barber'}</h3>
-              <p>{barberInfo.role || 'Stylist'}</p>
+            <div className="profile-avatar">Barber Id:{barberId.toString().substring(0, 1).toUpperCase()}</div>
+              <h3>Barber Name:{barberInfo.name || 'Barber'}</h3>
+              <p>Role: {barberInfo.role || 'Stylist'}</p>
             </div>
           </div>
         </div>
@@ -333,18 +333,17 @@ const BarberDashboard = () => {
                   
                   <div className="appointment-card">
                     <div className="appointment-header">
-                      <div className="appointment-title">{appointment.service}</div>
+                      <div className="appointment-title">{appointment.serviceName}</div>
                       <div className={`appointment-status ${appointment.status.toLowerCase()}`}>
                         {appointment.status}
                       </div>
-                      <div className="more-options">⋮</div>
                     </div>
                     
                     <div className="client-info">
                       <div className="client-initials">
-                        {appointment.clientName && appointment.clientName.split(' ').map(n => n[0]).join('')}
+                        {appointment.customerName && appointment.customerName.split(' ').map(n => n[0]).join('')}
                       </div>
-                      <div className="client-name">{appointment.clientName}</div>
+                      <div className="client-name">{appointment.customerName}</div>
                     </div>
                   </div>
                 </div>

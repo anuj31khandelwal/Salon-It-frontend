@@ -267,6 +267,7 @@
   }
   
   .appointment-title {
+    color: #fff;
     font-weight: 600;
   }
   
@@ -295,6 +296,7 @@
     display: flex;
     align-items: center;
     margin-bottom: 15px;
+    color: #fff;
   }
   
   .client-initials {
